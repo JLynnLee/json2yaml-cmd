@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "result": 0,
+  "message": "ok",
+  "success": true,
+  "raw": false,
+  "rs": {
+    "message": "acknowledge",
+    "result": "acknowledge"
+  }
+}

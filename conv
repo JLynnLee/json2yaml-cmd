@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+use App\Events\Record;
+use Symfony\Component\Console\Application;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use App\Command\Json;
+use App\Command\Yaml;
+use App\Command\Root;
+
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/function.php';
+
+define('APP_PATH', __DIR__);
+
+$app = new Application('Yaml数据与Json数据的互转小工具','v0.0.1');
+$dispatcher = new EventDispatcher();
+
+$app->add(new Json());
+$app->add(new Yaml());
+$app->add(new Root());
+$app->setDefaultCommand('root');
+$app->setDispatcher($dispatcher);
+$record = new Record();
+$record->handle($dispatcher);
+
+try {
+    $app->run();
+} catch (Exception $e) {
+    var_dump($e->getMessage());
+}
