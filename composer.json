@@ -1,6 +1,6 @@
 {
     "name": "json2yaml/cmd",
-    "description": "Just a Test",
+    "description": "json data to yaml data or yaml data to json data",
     "type": "project",
     "require": {
         "symfony/console": "^5.1",
