@@ -2,6 +2,7 @@
     "name": "json2yaml/cmd",
     "description": "json data to yaml data or yaml data to json data",
     "type": "project",
+    "license": "Apache-2.0",
     "require": {
         "symfony/console": "^5.1",
         "ext-json": "*",
